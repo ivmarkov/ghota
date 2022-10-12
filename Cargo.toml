@@ -1,0 +1,18 @@
+[package]
+name = "ghota"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = ["std"]
+
+std = ["alloc", "embedded-svc/std", "serde/std", "serde-json-core/std"]
+alloc = ["embedded-svc/alloc"]
+nightly = ["embedded-svc/nightly"]
+
+[dependencies]
+heapless = { version = "0.7", default-features = false, features = ["serde"] }
+log = { version = "0.4", default-features = false }
+serde = { version = "1", default-features = false, features = ["derive"] }
+serde-json-core = { version = "0.4", default-features = false }
+embedded-svc = { version = "0.23", git = "https://github.com/esp-rs/embedded-svc", default-features = false, features = ["experimental"] }
