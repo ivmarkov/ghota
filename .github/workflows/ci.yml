@@ -30,8 +30,8 @@ jobs:
       - name: Build | Fmt Check
         run: cargo fmt -- --check
       - name: Build | Clippy
-        run: cargo clippy --features nightly,edge-net,embedded-svc --no-deps -- -Dwarnings
+        run: cargo clippy --features nightly --no-deps -- -Dwarnings
       - name: Build | Default
         run: cargo build
       - name: Build | Nightly
-        run: cargo build --features nightly,edge-net,embedded-svc --no-default-features
+        run: cargo build --features nightly --no-default-features
