@@ -423,7 +423,7 @@ pub mod asynch {
     where
         C: Connection,
     {
-        type ReadFuture<'b> = impl Future<Output = Result<usize, Self::Error>> + 'a
+        type ReadFuture<'b> = impl Future<Output = Result<usize, Self::Error>> + 'b
         where Self: 'b;
 
         fn read<'b>(&'b mut self, buf: &'b mut [u8]) -> Self::ReadFuture<'b> {
